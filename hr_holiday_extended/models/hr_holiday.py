@@ -189,7 +189,7 @@ class HrEmployeeBase(models.AbstractModel):
                     leave_duration_field = 'number_of_days'
                     leave_unit = 'days'
                 else:
-                    leave_duration_field = 'number_of_hours_display'
+                    leave_duration_field = 'number_of_hours'
                     leave_unit = 'hours'
 
                 leave_type_data = allocations_leaves_consumed[employee][leave_type]

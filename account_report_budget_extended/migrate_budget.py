@@ -1,16 +1,16 @@
 import sys
 
-sys.path.insert(0, "/opt/odoo18/odoo18-server")
+sys.path.insert(0, "/opt/odoo18/odoo")
 
 import odoo
 from odoo import api, SUPERUSER_ID
 
 # Update this if your config path is different
 odoo.tools.config.parse_config([
-    "--config=/opt/odoo18/ekara.conf"
+    "--config=/etc/odoo18.conf"
 ])
 
-registry = odoo.registry("ekara_18_test")
+registry = odoo.registry("July20")
 
 with registry.cursor() as cr:
     env = api.Environment(cr, SUPERUSER_ID, {})
