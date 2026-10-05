@@ -12,3 +12,5 @@ from . import account_asset
 from . import sale_order
 from . import l10n_in_withholding
 from . import account_subgroup
+
+from . import account_move_contact
