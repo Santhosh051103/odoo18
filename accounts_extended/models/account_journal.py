@@ -220,6 +220,7 @@ class AccountsJournal(models.Model):
                 'number_to_reconcile': number_to_reconcile.get(journal.id, 0),
                 'account_balance': currency.format(journal_closing_balance),
                 'bank_closing_balance1': currency.format(bank_closing_balance1),
+                'drag_drop_settings': {'image': '/account/static/src/img/bank.svg' if journal.type in ('bank', 'credit') else '/web/static/img/rfq.svg', 'text': 'Drop to import transactions'},
                 'has_at_least_one_statement': bool(journal.last_statement_id),
                 'nb_lines_bank_account_balance': (bool(journal.has_statement_lines) or bool(nb_direct_payments)) and accessible,
                 'outstanding_pay_account_balance': currency.format(outstanding_pay_account_balance),
