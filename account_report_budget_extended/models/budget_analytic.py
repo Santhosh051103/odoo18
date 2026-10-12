@@ -574,7 +574,7 @@ class BudgetAnalytic(models.Model):
         #     [('budget_id', 'in', self.ids)])
         action = self.env['ir.actions.actions']._for_xml_id(
             'accounts_extended.action_open_budget_vs_actual_odoo') if self.user_type == 'odoo' else self.env[
-            'ir.actions.actions']._for_xml_id('accounts_extended.action_open_budget_vs_actual_non_odoo')
+            'ir.actions.actions']._for_xml_id('account_report_budget_extended.action_open_budget_vs_actual_non_odoo')
         # action['domain'] = [('budget_id', 'in', self.ids)]
         # action['context'] = {'group_by': False}
         return action
