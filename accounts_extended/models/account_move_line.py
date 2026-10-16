@@ -99,8 +99,8 @@ class AccountMoveLine(models.Model):
                 ('item_ids.account_id', '=', rec.account_id.id)
             ])
 
-            budget_lines = rec.move_id.budget_analytic_id.budget_id.filtered(
-                lambda l: l.budget_position_id in budget_positions
+            budget_lines = rec.move_id.budget_analytic_id.budget_line_ids.filtered(
+                lambda l: l.general_budget_id in budget_positions
             )
 
             rec.budget_id = [(6, 0, budget_lines.ids)]
