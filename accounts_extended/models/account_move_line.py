@@ -96,7 +96,7 @@ class AccountMoveLine(models.Model):
                 continue
 
             budget_positions = self.env['account.report.budget'].sudo().search([
-                ('account_ids', 'in', rec.account_id.id)
+                ('item_ids.account_id', '=', rec.account_id.id)
             ])
 
             budget_lines = rec.move_id.budget_analytic_id.budget_id.filtered(
